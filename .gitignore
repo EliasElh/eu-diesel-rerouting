@@ -1,0 +1,21 @@
+# Private
+.env
+
+# Data (can be regenerated via ingestion scripts)
+data/
+*.duckdb
+*.db
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
