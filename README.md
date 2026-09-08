@@ -52,16 +52,16 @@ are the next steps (SQL analysis phase).
   incomplete — see Limitations).
 
 ## Pipeline
-Comtrade API ─┐
-├─> raw JSON (data/raw/) ─> cleaned table (data/processed/)
-EIA API (WIP) ─┘
-│ 
-v
-completeness report DuckDB (data/diesel.duckdb)
-│
-v
-SQL analysis + charts
-
+```
+Comtrade API  ─┐
+                ├─> raw JSON (data/raw/)  ─> cleaned table (data/processed/)
+EIA API (WIP) ─┘         │                          │
+                          │                          v
+                   completeness report        DuckDB (data/diesel.duckdb)
+                                                      │
+                                                      v
+                                              SQL analysis + charts
+```
 
 1. **Ingest** (`src/ingest_comtrade.py`) — downloads monthly import data for
    all 30 reporters, 2019–2026, one API call per (reporter, year). Idempotent:
@@ -91,6 +91,7 @@ SQL analysis + charts
    Results).
 
 ## Repository structure
+```
 eu-diesel-rerouting/
 ├── src/
 │ ├── reporters.py # EU-27+UK+NO+CH reporter code reference (hand-built, validated)
@@ -108,7 +109,7 @@ eu-diesel-rerouting/
 ├── data/ # raw/processed data, DuckDB file (gitignored)
 ├── requirements.txt
 └── .env.example # COMTRADE_API_KEY, EIA_API_KEY
-
+```
 
 ## Data quality issues found and how they were handled
 
