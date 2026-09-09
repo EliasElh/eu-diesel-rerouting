@@ -54,7 +54,7 @@ are the next steps (SQL analysis phase).
 ## Pipeline
 ```
 Comtrade API  ─┐
-                ├─> raw JSON (data/raw/)  ─> cleaned table (data/processed/)
+               ├─> raw JSON (data/raw/)  ─> cleaned table (data/processed/)
 EIA API (WIP) ─┘          │                          │
                           │                          v
                    completeness report        DuckDB (data/diesel.duckdb)
