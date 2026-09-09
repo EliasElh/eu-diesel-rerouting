@@ -159,6 +159,25 @@ The second chart isolates external sourcing: Russia supplied 2.5–4.5 Mt/month
 before the embargo and collapses to near-zero after February 2023, replaced
 simultaneously by Saudi Arabia, the US, Kuwait, India and the UAE.
 
+### Q2 — Price signal vs. volume response
+
+Tested whether extra-zone diesel import volumes respond to the crack spread
+(diesel minus crude price) with a lag, on the hypothesis that shipping from
+new suppliers (India, Gulf) takes 4-6 weeks longer than the pre-embargo
+Russian routes.
+
+Result: no meaningful linear correlation found, at any lag from 0 to 6
+months, whether tested on price/volume levels (max |r| = 0.17) or on
+month-over-month changes (max |r| = 0.18, sign inconsistent across lags).
+
+Interpretation: the rerouting appears driven primarily by the embargo itself
+-- a discrete regulatory shock -- rather than a gradual response to a price
+signal. The crack spread spike (peaking Oct 2022, several months before the
+February 2023 embargo) is more plausibly a *consequence* of anticipated
+scarcity than a *cause* of the volume shift. This is consistent with the
+sharp, near-instantaneous drop in Russian volumes visible in the origin
+chart, rather than a gradual substitution pattern.
+
 ## Status
 
 - [x] Data acquisition (Comtrade, 240 API calls, 0 failures)
