@@ -159,6 +159,14 @@ The second chart isolates external sourcing: Russia supplied 2.5–4.5 Mt/month
 before the embargo and collapses to near-zero after February 2023, replaced
 simultaneously by Saudi Arabia, the US, Kuwait, India and the UAE.
 
+### Q1 — Origin shift, quantified
+
+Russia's average share of extra-zone EU diesel imports was 44.9% before the
+embargo (Jan 2019 - Jan 2023). It fell to 6.0% in February 2023 (the month
+the embargo took effect) and below 2% by March 2023 -- a near-vertical drop
+completed within one month of the embargo date, not a gradual substitution.
+Full monthly market-share table: docs/market_shares.csv
+
 ### Q2 — Price signal vs. volume response
 
 Tested whether extra-zone diesel import volumes respond to the crack spread
@@ -184,8 +192,8 @@ chart, rather than a gradual substitution pattern.
 - [x] Data quality checks and cleaning
 - [x] DuckDB load
 - [x] Origin-share charts (Q1 first pass)
-- [ ] EIA price data ingestion
-- [ ] SQL analysis: exact market-share tables, embargo transition speed
+- [x] EIA price data ingestion
+- [x] SQL analysis: exact market-share tables, embargo transition speed
 - [ ] Price/flow correlation (crack spread vs. volumes, lagged)
 - [ ] Tonne-mile calculation (shipping distance impact)
 - [ ] Power BI dashboard
