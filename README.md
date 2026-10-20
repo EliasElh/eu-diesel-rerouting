@@ -3,7 +3,7 @@
 Data pipeline and analysis of the reshuffling of EU diesel imports after the
 2023 EU embargo on Russian refined petroleum products.
 
-**Quick read:** one-page summary in [`docs/one_pager.pdf`](docs/one_pager.pdf),
+**Quick read:** one-page summary in [`docs/one_pager.pdf`](docs/eu-diesel-embargo-one-pager.pdf),
 full dashboard in [`docs/dashboard.pdf`](docs/dashboard.pdf).
 
 ## The story
