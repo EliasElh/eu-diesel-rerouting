@@ -14,7 +14,7 @@ Countries covered: the top 18 extra-zone origins by tonnage, covering
 ~95.5% of extra-zone import volume (see coverage report below).
 
 Sources:
-  - Top 6 (76% of volume): verified via ports.com sea-route calculator,
+  - Top 5 (76% of volume): verified via ports.com sea-route calculator,
     each checked individually (see README methodology notes).
   - Remaining 12 (20% of volume): estimated by geographic proximity to a
     verified route on the same sea/strait system. Lower confidence -- not
