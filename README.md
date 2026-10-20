@@ -157,7 +157,7 @@ eu-diesel-rerouting/
 │   ├── check_completeness.py  # raw data QA report
 │   ├── transform.py           # stacking + double-count filtering
 │   ├── reference.py           # partner code reference (downloaded + cached)
-│   ├── enrich.py               # join partner/reporter names onto flows
+│   ├── enrich.py              # join partner/reporter names onto flows
 │   ├── fill_zeros.py          # explicit zero-flow reconstruction
 │   ├── load_duckdb.py         # Parquet -> DuckDB (flows table)
 │   ├── ingest_eia.py          # EIA price ingestion (Brent, NY Harbor ULSD)
@@ -166,7 +166,8 @@ eu-diesel-rerouting/
 │   ├── first_chart.py         # origin-share charts
 │   ├── market_share.py        # Q1: exact market shares, transition speed
 │   ├── analyze_price_flow.py  # Q2: price/flow lag correlation
-│   └── tonne_miles.py         # Q3: tonne-mile calculation
+│   ├── tonne_miles.py         # Q3: tonne-mile calculation
+│   └── export_powerbi.py      # export analysis-ready CSV files for Power BI
 ├── sql/                       # (reserved for standalone analytical queries)
 ├── docs/                      # charts, CSV exports, methodology artifacts
 ├── data/                      # raw/processed data, DuckDB file (gitignored)
@@ -227,6 +228,16 @@ The second chart isolates external sourcing: Russia supplied 2.5–4.5 Mt/month
 before the embargo and collapses to near-zero after February 2023, replaced
 simultaneously by Saudi Arabia, the US, Kuwait, India and the UAE.
 
+## Dashboard
+
+Four-page Power BI report built on the same DuckDB tables, exported as CSV
+(`src/export_powerbi.py`). Full PDF: `docs/dashboard.pdf`.
+
+![Overview](docs/dashboard_overview.png)
+![Price vs Flow](docs/dashboard_price_vs_flow.png)
+![Shipping Distance](docs/dashboard_shipping_distance.png)
+![Methodology](docs/dashboard_methodology.png)
+
 ### Q1 — Origin shift, quantified
 
 Russia's average share of extra-zone EU diesel imports was 44.9% before the
@@ -278,7 +289,7 @@ simplification (see Limitations). Full monthly table: `docs/tonne_miles.csv`
 - [x] SQL analysis: exact market-share tables, embargo transition speed
 - [x] Price/flow correlation (crack spread vs. volumes, lagged)
 - [x] Tonne-mile calculation (shipping distance impact)
-- [ ] Power BI dashboard
+- [x] Power BI dashboard
 - [ ] One-pager + methodology summary
 
 ## Limitations
@@ -333,4 +344,10 @@ python -m src.distances
 python -m src.market_share
 python -m src.analyze_price_flow
 python -m src.tonne_miles
+
+# Power BI
+python -m src.export_powerbi
+# then open dashboard/diesel_dashboard.pbix and point the CSV sources
+# (Transform data > Data source settings) to your local data/powerbi/ folder
+
 ```
